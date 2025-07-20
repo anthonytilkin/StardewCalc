@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>SV Crop Selector</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <div class="main">
+      
+      <!-- LEFT: seed icons grid -->
+      <div class="grid-container">
+        <div id="cropGrid" class="grid"></div>
+      </div>
+      
+      <!-- RIGHT: menu -->
+      <aside class="menu">
+        <h2>Crop Selector</h2>
+        <div class="controls">
+          <div class="control-group">
+            <label for="seasonSelect">Season:</label>
+            <select id="seasonSelect">
+              <option value="spring">Spring</option>
+              <option value="summer">Summer</option>
+              <option value="fall">Fall</option>
+              <option value="winter">Winter</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label for="cropCount"># of crops:</label>
+            <input type="number" id="cropCount" value="1" min="1" />
+          </div>
+
+          <button id="calculate" onclick="updateSummary()">Calculate</button>
+        </div>
+
+        <div id="selectionSummary" class="summary">
+          Select crops on the left and click “Calculate”
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+/* Basic reset & background */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: url('images/background.png') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+}
+
+/* Center everything vertically/horizontally if you like */
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem;
+}
+
+/* Two-column layout */
+.main {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Left: seed grid */
+.grid-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  /* semi-opaque background so icons pop out */
+  background: rgba(255,255,255,0.7);
+  border-radius: 8px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 0.8rem;
+}
+.grid img {
+  width: 100%;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border 0.2s;
+}
+.grid img.selected {
+  border-color: #4caf50;
+}
+
+/* Right: menu/sidebar */
+.menu {
+  width: 280px;
+  margin-left: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(255,255,255,0.85);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.menu h2 {
+  margin-top: 0;
+  text-align: center;
+}
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.control-group {
+  display: flex;
+  flex-direction: column;
+}
+.control-group label {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+#seasonSelect {
+  font-size: 1.1rem;
+  padding: 0.4rem;
+}
+#cropCount {
+  padding: 0.4rem;
+}
+#calculate {
+  padding: 0.6rem;
+  border: none;
+  border-radius: 6px;
+  background: #4caf50;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+#calculate:hover {
+  background: #45a049;
+}
+
+/* Summary text */
+.summary {
+  font-weight: bold;
+  text-align: center;
+}
